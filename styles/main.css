@@ -1,0 +1,19 @@
+body {
+	background-color: #6aacd8
+}
+
+#new-form-button {
+	float: right;
+}
+
+#new-form-table {
+	width: 100%;
+}
+
+#new-form-table td {
+	padding: 10px;
+}
+
+#save-field-button {
+	float: right;
+}
