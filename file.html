@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Form OCR</title>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+		<script type="text/javascript" src="scripts/jcrop/js/jquery.Jcrop.min.js"></script>
+		<script type="text/javascript" src="canvas.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/jquery-ui-git.css" type="text/css" media="all" />
+		<link rel="stylesheet" type="text/css" media="screen" href="scripts/jcrop/css/jquery.Jcrop.css" />
+	</head>
+	<body>
+		<button id="mapzone-button">Map Zone</button>
+		<img src="form.jpg" id="scan-img" />
+		<div id="mapzone-dialog" class="ui-helper-hidden">
+			<div id="crop-preview"></div>
+			<input type="text" placeholder="Name" id="mapName" />
+		</div>
+	</body>
+</html>

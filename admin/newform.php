@@ -14,7 +14,8 @@
 		<button id="save-form-button">Save Form</button>
 	</div>
 
-	<div id="field-creation-container">
+	<div id="field-creation-container" data-form_id="<?=$_GET['id']?>">
+	<h1>Creating <?=html_entity_decode($_GET['name'])?></h1>
 		<fieldset>
 			<legend>New Field</legend>
 		
@@ -32,12 +33,12 @@
 						<td><input type="text" name="label" /></td>
 						<td>
 							<select name="type">
-								<option value="text" selected>Text</option>
-								<option value="textarea">Textarea</option>
-								<option value="select">Select</option>
+								<option value="0" selected>Text</option>
+								<option value="1">Textarea</option>
+								<option value="2">Select</option>
 							</select>
 						</td>
-						<td><input type="text" name="default_value" /></td>
+						<td><input type="text" name="value" /></td>
 						<td><input type="text" name="priority" /></td>
 					</tr>
 				</tbody>
