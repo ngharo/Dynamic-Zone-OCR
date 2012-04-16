@@ -86,7 +86,7 @@ $(document).ready(function() {
 			op: 'get_templates'
 		},
 		success: function(templates) {
-			var html = 'Templates <br /><hr />';
+			var html = 'Forms <br /><hr />';
 			for(var i = 0; i<templates.length; i++) {
 				html += '<a href="template.php?id=' + templates[i].template_id + '&upload_id=' + templates[i].upload_id + '">' +
 					templates[i].template_id + '</a><br />';
