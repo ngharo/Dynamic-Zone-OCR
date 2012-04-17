@@ -1,6 +1,6 @@
 <?php
 require_once('uuid.php');
-if($_GET['id']) {
+if(isset($_GET['id'])) {
 	$template_id = $_GET['id'];
 } else {
 	$template_id = gen_uuid();

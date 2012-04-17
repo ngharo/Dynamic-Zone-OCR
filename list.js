@@ -2,7 +2,7 @@ $(document).ready(function() {
 	var loading = $('#newform-loading');
 	var saveForm = function(upload_id, template_id, callback) {
 		$.ajax({
-			url: '/buildhealth/api/service.php',
+			url: 'api/service.php',
 			type: 'post',
 			dataType: 'json',
 			data: {
@@ -29,13 +29,14 @@ $(document).ready(function() {
 			loading.show();
 			// fetch list -- populate select
 			$.ajax({
-				url: '/buildhealth/api/service.php',
+				url: 'api/service.php',
 				type: 'post',
 				dataType: 'json',
 				data: {
 					op: 'get_templates',
 				},
 				success: function(templates) {
+					templates = templates || [];
 					var select = $('<select />');
 					var options = '<option value="null">-- Choose a Template --</option>';
 
@@ -79,13 +80,14 @@ $(document).ready(function() {
 	});
 
 	$.ajax({
-		url: '/buildhealth/api/service.php',
+		url: 'api/service.php',
 		type: 'post',
 		dataType: 'json',
 		data: {
 			op: 'get_templates'
 		},
 		success: function(templates) {
+			templates = templates || [];
 			var html = 'Forms <br /><hr />';
 			for(var i = 0; i<templates.length; i++) {
 				html += '<a href="template.php?id=' + templates[i].template_id + '&upload_id=' + templates[i].upload_id + '">' +

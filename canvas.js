@@ -50,7 +50,7 @@ $(document).ready(function() {
 		if(fragment_id) {
 			$.ajax({
 				type: 'post',
-				url: '/buildhealth/api/service.php',
+				url: 'api/service.php',
 				dataType: 'json',
 				data: {
 					name: fragment_name,
@@ -63,7 +63,7 @@ $(document).ready(function() {
 		} else {	
 			$.ajax({
 				type: 'post',
-				url: '/buildhealth/api/service.php',
+				url: 'api/service.php',
 				dataType: 'json',
 				data: {
 					name: $('#mapName').val(),
@@ -79,7 +79,7 @@ $(document).ready(function() {
 
 	getFragments = function(template_id) {
 		$.ajax({
-			url: '/buildhealth/api/service.php',
+			url: 'api/service.php',
 			dataType: 'json',
 			type: 'post',
 			data: {
@@ -93,6 +93,7 @@ $(document).ready(function() {
 	};
 
 	drawFragmentBoxes = function(fragments) {
+		fragments = fragments || [];
 		for(var i = 0; i < fragments.length; i++) {
 			var f = fragments[i];
 			var _coords = JSON.parse(f.coords);

@@ -1,11 +1,12 @@
-<?
+<?php
 if($_POST){
 	$con = mysql_connect("localhost","root","qwerty12");
 	if (!$con)
 	{
 		die('Could not connect: ' . mysql_error());
 	}
-	mysql_select_db("buildhealth", $con);
+
+	mysql_select_db("zocr", $con);
 	switch($_POST['op']){
 	case 'add_view':
 		$name = htmlentities(mysql_real_escape_string($_POST['name']));
@@ -80,7 +81,7 @@ if($_POST){
 
 	case 'get_templates':
 		$q = mysql_query("SELECT distinct(template_id),id AS upload_id FROM forms");
-		$rows = array();
+		$rows = array(0);
 		while($r = mysql_fetch_array($q, MYSQL_ASSOC)) {
 			$rows[] = $r;
 		}
@@ -105,4 +106,3 @@ if($_POST){
 	mysql_close($con);
 }
 ?>
-
